@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+
+        <!-- Left Side -->
+        <div class="login-brand">
+
+            <div class="brand-logo">
+                <span>🎓</span>
+            </div>
+
+            <h1>Student Portal</h1>
+
+            <p class="brand-subtitle">
+                Your academic journey, all in one place.
+            </p>
+
+            <div class="brand-features">
+                <div class="brand-feature">
+                    <span>📊</span>
+                    <div>
+                        <strong>Academic Performance</strong>
+                        <small>Track your marks and attendance</small>
+                    </div>
+                </div>
+
+                <div class="brand-feature">
+                    <span>📅</span>
+                    <div>
+                        <strong>Stay Organized</strong>
+                        <small>Manage classes, exams and tasks</small>
+                    </div>
+                </div>
+
+                <div class="brand-feature">
+                    <span>🔔</span>
+                    <div>
+                        <strong>Stay Updated</strong>
+                        <small>Never miss important announcements</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Login Card -->
+        <div class="login-section">
+
+            <div class="login-card">
+
+                <div class="login-header">
+                    <div class="mobile-logo">🎓</div>
+
+                    <h2>Welcome Back!</h2>
+
+                    <p>
+                        Sign in to access your student dashboard
+                    </p>
+                </div>
+
+
+                <form id="loginForm">
+
+                    <!-- Student ID -->
+                    <div class="form-group">
+
+                        <label for="studentId">
+                            Student ID
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">👤</span>
+
+                            <input
+                                type="text"
+                                id="studentId"
+                                placeholder="Enter your student ID"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+                                👁️
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Remember -->
+                    <div class="login-options">
+
+                        <label class="remember-option">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <span class="forgot-password">
+                            Forgot password?
+                        </span>
+
+                    </div>
+
+
+                    <!-- Error -->
+                    <div
+                        id="loginError"
+                        class="login-error"
+                    ></div>
+
+
+                    <!-- Login Button -->
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+                        <span>Login</span>
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- Demo Credentials -->
+                <div class="demo-login">
+
+                    <div class="demo-title">
+                        Demo Login
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Student ID</span>
+                        <strong>VSB2024</strong>
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Password</span>
+                        <strong>123456</strong>
+                    </div>
+
+                </div>
+
+                <p class="login-footer">
+                    Student Academic Management System
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

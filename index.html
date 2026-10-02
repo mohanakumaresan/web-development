@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="portal-logo">
+                🎓
+            </div>
+
+            <div class="portal-title">
+                <h2>Student Portal</h2>
+                <span>Academic Management</span>
+            </div>
+
+        </div>
+
+
+        <!-- Student Mini Profile -->
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                MK
+            </div>
+
+            <div class="sidebar-student-info">
+
+                <strong>Mohanapriya K</strong>
+
+                <span>
+                    AI & Data Science
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section-title">
+                MAIN MENU
+            </div>
+
+            <button
+                class="nav-item active"
+                data-page="dashboard"
+            >
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Dashboard</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="profile"
+            >
+                <span class="nav-icon">👤</span>
+                <span class="nav-text">Profile</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="attendance"
+            >
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Attendance</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="marks"
+            >
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Marks</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="assignments"
+            >
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Assignments</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="exams"
+            >
+                <span class="nav-icon">🎓</span>
+                <span class="nav-text">Exams & Results</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="fees"
+            >
+                <span class="nav-icon">💳</span>
+                <span class="nav-text">Fees & Payments</span>
+            </button>
+
+
+            <div class="nav-section-title">
+                ACADEMICS
+            </div>
+
+
+            <button
+                class="nav-item"
+                data-page="timetable"
+            >
+                <span class="nav-icon">📅</span>
+                <span class="nav-text">Timetable</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="subjects"
+            >
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">Subjects</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="announcements"
+            >
+                <span class="nav-icon">📢</span>
+                <span class="nav-text">Announcements</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="calendar"
+            >
+                <span class="nav-icon">🗓️</span>
+                <span class="nav-text">Academic Calendar</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="documents"
+            >
+                <span class="nav-icon">📄</span>
+                <span class="nav-text">Documents</span>
+            </button>
+
+
+            <div class="nav-section-title">
+                ACCOUNT
+            </div>
+
+
+            <button
+                class="nav-item"
+                data-page="settings"
+            >
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Settings</span>
+            </button>
+
+
+            <button
+                class="nav-item logout-nav"
+                id="logoutBtn"
+            >
+                <span class="nav-icon">🚪</span>
+                <span class="nav-text">Logout</span>
+            </button>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-footer">
+
+            <div class="sidebar-help">
+
+                <div class="help-icon">
+                    💡
+                </div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact your department</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MOBILE OVERLAY
+    =========================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- ==========================================
+         MAIN AREA
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ======================================
+             TOPBAR
+        ======================================= -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open menu"
+                >
+                    ☰
+                </button>
+
+
+                <div class="page-heading">
+
+                    <span class="page-heading-label">
+                        STUDENT PORTAL
+                    </span>
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                <!-- Search -->
+
+                <div class="topbar-search">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        id="globalSearch"
+                    >
+
+                </div>
+
+
+                <!-- Notification -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        class="topbar-icon-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+
+                        🔔
+
+                        <span
+                            class="notification-badge"
+                            id="notificationBadge"
+                        >
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-panel"
+                        id="notificationPanel"
+                    >
+
+                        <div class="notification-panel-header">
+
+                            <div>
+                                <strong>Notifications</strong>
+                                <span>Stay updated</span>
+                            </div>
+
+                            <button id="markAllRead">
+                                Mark all read
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="notification-list"
+                            id="notificationList"
+                        >
+
+                            <div class="notification-item unread">
+
+                                <div class="notification-icon blue">
+                                    📢
+                                </div>
+
+                                <div>
+                                    <strong>Internal Exams</strong>
+
+                                    <p>
+                                        Internal examinations begin on
+                                        October 8, 2026.
+                                    </p>
+
+                                    <small>
+                                        2 hours ago
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-item unread">
+
+                                <div class="notification-icon green">
+                                    📝
+                                </div>
+
+                                <div>
+                                    <strong>Assignment Reminder</strong>
+
+                                    <p>
+                                        Data Warehouse Design is due soon.
+                                    </p>
+
+                                    <small>
+                                        Yesterday
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-item unread">
+
+                                <div class="notification-icon orange">
+                                    💳
+                                </div>
+
+                                <div>
+                                    <strong>Fee Reminder</strong>
+
+                                    <p>
+                                        Pending semester fee: ₹25,000.
+                                    </p>
+
+                                    <small>
+                                        2 days ago
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Profile -->
+
+                <div class="profile-wrapper">
+
+                    <button
+                        class="topbar-profile"
+                        id="profileBtn"
+                    >
+
+                        <div class="topbar-avatar">
+                            MK
+                        </div>
+
+                        <div class="topbar-profile-info">
+
+                            <strong>
+                                Mohanapriya K
+                            </strong>
+
+                            <span>
+                                3rd Year • AI & DS
+                            </span>
+
+                        </div>
+
+                        <span class="profile-arrow">
+                            ▾
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <div class="dropdown-profile-header">
+
+                            <div class="dropdown-avatar">
+                                MK
+                            </div>
+
+                            <div>
+                                <strong>Mohanapriya K</strong>
+                                <span>VSB2024</span>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="dropdown-item"
+                            data-page="profile"
+                        >
+                            <span>👤</span>
+                            My Profile
+                        </button>
+
+
+                        <button
+                            class="dropdown-item"
+                            data-page="settings"
+                        >
+                            <span>⚙️</span>
+                            Settings
+                        </button>
+
+
+                        <div class="dropdown-divider"></div>
+
+
+                        <button
+                            class="dropdown-item dropdown-logout"
+                            id="dropdownLogout"
+                        >
+                            <span>🚪</span>
+                            Logout
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ======================================
+             PAGE CONTENT
+        ======================================= -->
+
+        <section
+            id="pageContent"
+            class="page-content"
+        >
+        </section>
+
+
+        <!-- ======================================
+             FOOTER
+        ======================================= -->
+
+        <footer class="main-footer">
+
+            <div>
+                © 2026 Student Academic Management System
+            </div>
+
+            <div>
+                VSB College of Engineering Technical Campus
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ==========================================
+     SCRIPT
+=========================================== -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
